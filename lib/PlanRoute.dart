@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'RouteList.dart';
+import 'Settings.dart';
+import 'Filter.dart';
 
 class PlanRoutePage extends StatelessWidget {
   @override
@@ -7,6 +9,26 @@ class PlanRoutePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Plan Route'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsPage()),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Filter()),
+              );
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Text(
@@ -17,7 +39,7 @@ class PlanRoutePage extends StatelessWidget {
       // Using an ElevatedButton for navigation
       bottomNavigationBar: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, // Align the button at the center
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
@@ -34,6 +56,7 @@ class PlanRoutePage extends StatelessWidget {
                 ),
               ),
             ),
+
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'PlanRoute.dart';
+import 'Settings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,17 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsPage()),
+              );
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Text(
