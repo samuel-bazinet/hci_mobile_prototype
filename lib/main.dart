@@ -11,20 +11,26 @@ void main() {
   runApp(const MyApp());
 }
 
+final themeModeNotifier = ValueNotifier(ThemeMode.system);
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Route Planner',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      darkTheme: ThemeData.dark(),
-      themeMode: ThemeMode.dark,
-      home: const HomePage(),
-    );
+    return ValueListenableBuilder(
+        valueListenable: themeModeNotifier,
+        builder: (context, value, child) {
+          return MaterialApp(
+            title: 'Route Planner',
+            theme: ThemeData(
+              primarySwatch: Colors.purple,
+            ),
+            darkTheme: ThemeData.dark(),
+            themeMode: value, // Use the current theme mode
+            home: HomePage(),
+          );
+        });
   }
 }
 
@@ -110,7 +116,7 @@ class _MapPageState extends State<MapPage> {
           mapController: MapController(),
           options: MapOptions(
             center: _center,
-            zoom: 18.0,
+            zoom: 15.0,
           ),
           children: [
             TileLayer(

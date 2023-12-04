@@ -8,10 +8,10 @@ class PlanRoutePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Plan Route'),
+        title: const Text('Plan Route'),
         actions: [
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                 context,
@@ -20,7 +20,7 @@ class PlanRoutePage extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(Icons.edit),
+            icon: const Icon(Icons.edit),
             onPressed: () {
               Navigator.push(
                 context,
@@ -30,7 +30,7 @@ class PlanRoutePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'Plan your route here',
           style: TextStyle(fontSize: 20.0),
@@ -49,14 +49,13 @@ class PlanRoutePage extends StatelessWidget {
                 );
               },
               child: Container(
-                padding: EdgeInsets.all(15.0),
-                child: Text(
+                padding: const EdgeInsets.all(15.0),
+                child: const Text(
                   'Search',
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
             ),
-
           ],
         ),
       ),

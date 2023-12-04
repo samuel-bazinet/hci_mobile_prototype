@@ -1,9 +1,10 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+  SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,22 @@ class SettingsPage extends StatelessWidget {
               onTap: () {
                 // Navigate to Notifications settings page
               },
+            ),
+            ListTile(
+              leading: const Icon(Icons.brightness_6),
+              title: const Text('Dark Mode'),
+              trailing: ValueListenableBuilder(
+                valueListenable: themeModeNotifier,
+                builder: (context, value, child) {
+                  return Switch(
+                    value: value == ThemeMode.dark,
+                    onChanged: (value) {
+                      themeModeNotifier.value =
+                          value ? ThemeMode.dark : ThemeMode.light;
+                    },
+                  );
+                },
+              ),
             ),
             ListTile(
               leading: const Icon(Icons.security),
