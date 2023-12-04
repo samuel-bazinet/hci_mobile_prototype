@@ -20,7 +20,7 @@ class PlanRoutePage extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: const Icon(Icons.edit),
+            icon: const Icon(Icons.filter_alt),
             onPressed: () {
               Navigator.push(
                 context,

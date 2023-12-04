@@ -31,6 +31,13 @@ class SettingsPage extends StatelessWidget {
               },
             ),
             ListTile(
+              leading: const Icon(Icons.credit_card),
+              title: const Text('Payment Information'),
+              onTap: () {
+                // Navigate to Payment Information settings page
+              },
+            ),
+            ListTile(
               leading: const Icon(Icons.brightness_6),
               title: const Text('Dark Mode'),
               trailing: ValueListenableBuilder(
@@ -58,6 +65,13 @@ class SettingsPage extends StatelessWidget {
               title: const Text('Help & Support'),
               onTap: () {
                 // Navigate to Help & Support page
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Logout'),
+              onTap: () {
+                // Navigate to About page
               },
             ),
           ],
