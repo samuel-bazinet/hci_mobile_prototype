@@ -75,6 +75,9 @@ class PlanRoutePage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -90,19 +93,24 @@ class PlanRoutePage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
             Expanded(
                 child: FlutterMap(
-                  mapController: MapController(),
-                  options: const MapOptions(keepAlive: true, initialZoom: 15, initialCenter:  latLng.LatLng(
-                      43.94645712813915, -78.89748808892554)),
-                  children: [
-                    TileLayer(
-                      urlTemplate:
-                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                      subdomains: const ['a', 'b', 'c'],
-                    ),
-                  ],
-                )),
+              mapController: MapController(),
+              options: const MapOptions(
+                  keepAlive: true,
+                  initialZoom: 15,
+                  initialCenter:
+                      latLng.LatLng(43.94645712813915, -78.89748808892554)),
+              children: [
+                TileLayer(
+                  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  subdomains: const ['a', 'b', 'c'],
+                ),
+              ],
+            )),
           ],
         ));
   }
